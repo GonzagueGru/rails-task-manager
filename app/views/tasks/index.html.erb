@@ -1,0 +1,22 @@
+<div class="container">
+<h1>My tasks</h1>
+
+<h3>
+  <ul>
+  <% @tasks.each do |task| %>
+  <li> <%= link_to "[ #{'x' if task.completed} ] - #{task.title}", task_path(task) %>
+       <%= link_to task_path(task),
+       method: :delete,
+       data: {confirm: "Delete#{task.title}?"} do %>
+       <span class="glyphicon glyphicon-trash"></span>
+       <% end %>
+  </li>
+  <% end %>
+  </ul>
+</h3>
+<hr>
+<a href="/tasks/new" class="link"> <br><br>Add a new task</a>
+
+</div>
+
+

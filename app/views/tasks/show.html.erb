@@ -1,0 +1,14 @@
+
+<%= link_to 'EDIT', "/tasks/#{@tasks.id}/edit", class: 'btn btn-warning' %>
+<div class="container form-group">
+  <h1><%= @tasks.title %></h1>
+  <br>
+    <h4><%= @tasks.details %></h4>
+    <hr>
+      <p><%= "[#{'x' if @tasks.completed} ] - task completed?" %></p>
+      <br>
+      <hr>
+      <br>
+      <a href="/tasks" class="link"> <br><br>Back to list</a>
+</div>
+
